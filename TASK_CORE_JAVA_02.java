@@ -97,6 +97,7 @@ public class TASK_CORE_JAVA_02 {
                     break;
                 case 6:
                     System.out.println("Exiting...");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid choice");
