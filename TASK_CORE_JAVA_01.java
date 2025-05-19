@@ -1,20 +1,57 @@
 import java.util.*;
 public class TASK_CORE_JAVA_01 {
-    static class CreateStudent{
+    static class CreateStudent {
         int ID;
         String name;
         int age;
         String course;
-        CreateStudent(int ID, String name, int age, String course){
+
+        CreateStudent(int ID, String name, int age, String course) {
             this.ID = ID;
             this.name = name;
             this.age = age;
             this.course = course;
         }
-        public String displaystudent(){
-            return "ID: " + ID + ", name: " + name + ", age: " + age +", course: " + course;
+
+        public int getID() {
+            return ID;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public String getCourse() {
+            return course;
+        }
+
+        public void setId(int ID) {
+            this.ID = ID;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public void setCourse(String course) {
+            this.course = course;
+        }
+
+
+        public String displaystudent() {
+            return "ID: " + ID + ", name: " + name + ", age: " + age + ", course: " + course;
         }
     }
+
+
     public static void main(String args[]){
         Scanner obj = new Scanner(System.in);
         ArrayList<CreateStudent> studentdata = new ArrayList<>();
@@ -52,20 +89,25 @@ public class TASK_CORE_JAVA_01 {
                     System.out.print("Enter student ID: ");
                     ID = obj.nextInt();
 
-                    for(CreateStudent s : studentdata) {
-                        if (ID == s.ID) {
+                    boolean found = false;
+                    for (CreateStudent s : studentdata) {
+                        if (ID == s.getID()) {
                             System.out.println(s.displaystudent());
-                        } else {
-                            System.out.println("no data found");
-
+                            found = true;
+                            break;
                         }
                     }
+                    if (!found) {
+                        System.out.println("No data found");
+                    }
+
                     break;
                 case 4:
                     System.out.print("Enter the Student ID to be updated: ");
                     ID = obj.nextInt();
+                    boolean found1 = false;
                     for(CreateStudent s : studentdata) {
-                        if (ID == s.ID) {
+                        if (ID == s.getID()) {
                             System.out.print("Enter name: ");
                             obj.nextLine();
                             name = obj.nextLine();
@@ -74,16 +116,20 @@ public class TASK_CORE_JAVA_01 {
                             obj.nextLine();
                             System.out.print("Enter course: ");
                             course = obj.nextLine();
-                            s.name = name;
-                            s.age = age;
-                            s.course = course;
+                            s.setName(name);
+                            s.setAge(age);
+                            s.setCourse(course);
                             System.out.println("Student details updated");
-
-                        } else {
-                            System.out.println("no data found");
+                            found1 = true;
+                            break;
 
                         }
+
+                        }
+                    if (!found1) {
+                        System.out.println("No data found");
                     }
+
                     break;
                 case 5:
                     System.out.print("Enter ID to be deleted: ");
