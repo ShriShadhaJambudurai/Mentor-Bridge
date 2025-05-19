@@ -14,7 +14,7 @@ public class TASK_CORE_JAVA_02 {
             this.traveldate = traveldate;
         }
         public String displaydetails(){
-            return "ticketid: " + ticketid + ", passengername: " + passengername + ", departurecity: " + departurecity + ", arrivalcity: " + arrivalcity+ ", traveldate"+ traveldate;
+            return "ticketid: " + ticketid + ", passengername: " + passengername + ", departurecity: " + departurecity + ", arrivalcity: " + arrivalcity+ ", traveldate: "+ traveldate;
         }
     }
     public static void main(String args[]){
@@ -76,6 +76,8 @@ public class TASK_CORE_JAVA_02 {
                             departurecity = obj.nextLine();
                             System.out.print("Enter arrivalcity: ");
                             arrivalcity = obj.nextLine();
+                            System.out.print("Enter travel date: ");
+                            traveldate = obj.nextLine();
                             ticket.passengername = passengername;
                             ticket.departurecity = departurecity;
                             ticket.arrivalcity = arrivalcity;
