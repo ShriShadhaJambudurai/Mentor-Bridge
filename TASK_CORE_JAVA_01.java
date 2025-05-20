@@ -1,10 +1,10 @@
 import java.util.*;
 public class TASK_CORE_JAVA_01 {
     static class CreateStudent {
-        int ID;
-        String name;
-        int age;
-        String course;
+       private int ID;
+        private String name;
+        private int age;
+        private String course;
 
         CreateStudent(int ID, String name, int age, String course) {
             this.ID = ID;
